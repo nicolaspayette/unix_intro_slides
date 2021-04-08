@@ -1,0 +1,76 @@
+\mode<presentation>
+
+\RequirePackage{fontspec}
+\setmonofont[Scale=MatchUppercase]{Fira Mono}
+
+\RequirePackage{xcolor}
+\definecolor{OxfordBlue}{RGB}{0,33,71}
+
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\definecolor{OxfordBlue}{RGB}{0,33,71}
+\setbeamercolor{title}{fg=OxfordBlue}
+\setbeamercolor{frametitle}{fg=OxfordBlue}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{description item}{fg=black}
+\setbeamertemplate{description item}{\bfseries\insertdescriptionitem}
+\setbeamertemplate{itemize item}{\color{OxfordBlue}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{OxfordBlue}$\blacktriangleright$}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamercolor{block title}{use={frametitle},fg=frametitle.fg,bg=frametitle.bg}
+
+\RequirePackage{tcolorbox}
+\tcbset{%
+  noparskip,
+  boxrule=0.25pt,
+  colback=OxfordBlue!10, %background color of the box
+  colframe=OxfordBlue!75!black, %color of frame and title background
+  coltext=black, %color of body text
+  coltitle=white, %color of title text
+  fonttitle=\bfseries,
+}
+
+\usepackage{shadowtext}
+\shadowoffset{0.5pt}
+\shadowcolor{OxfordBlue!50!black}
+
+\newcommand{\hl}[1]{\textcolor{OxfordBlue}{\textbf{#1}}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{description item}{\bfseries\insertdescriptionitem}
+\setbeamertemplate{itemize item}{\color{black!20}$\blacktriangleright$}
+
+%\setbeamertemplate{footline}{%
+%  \ifnum\c@framenumber=1
+%  \else
+%    \begin{beamercolorbox}[wd=0.98\paperwidth,right,dp=2ex]{page number}
+%      \insertframenumber/\inserttotalframenumber
+%    \end{beamercolorbox}
+%  \fi%
+%}
+%
+%\setbeamertemplate{frametitle}{%
+%  \nointerlineskip%
+%  \begin{beamercolorbox}[wd=\paperwidth, sep=4pt, leftskip=3pt, rightskip=3pt]{frametitle}%
+%    \strut\shadowtext{\insertframetitle}\nolinebreak\strut
+%  \end{beamercolorbox}
+%  \nointerlineskip%
+%  \begin{beamercolorbox}[wd=\paperwidth, ht=0.5pt]{separation line}%
+%  \end{beamercolorbox}%
+%}
+
+%\AtBeginSection[]{%
+%  \begin{frame}
+%    \setbeamercovered{transparent}
+%    \frametitle{Plan}
+%    \tableofcontents[currentsection,hideothersubsections]
+%  \end{frame}
+%}
+%
+% https://tex.stackexchange.com/a/129544/7329
+\makeatletter
+\define@key{beamerframe}{wide}[1em]{%
+  \def\beamer@cramped{\itemsep #1\topsep0.5pt\relax}}
+\makeatother
